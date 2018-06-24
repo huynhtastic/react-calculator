@@ -11,15 +11,21 @@ class App extends Component {
     };
   }
 
-  addButton = () => {
+  addNum = () => {
     this.setState({ currentNumber: this.state.currentNumber + 1 });
+  }
+
+  subtractNum = () => {
+    this.setState({ currentNumber: this.state.currentNumber - 1});
   }
 
   render() {
     return (
       <div className="App">
         <p>{this.state.currentNumber}</p>
-        <MathButton id='addButton' onClickFunc={this.addButton} label='+1' />
+        <input id='inputNumber' type='number' />
+        <MathButton id='addButton' onClickFunc={this.addNum} label='+1' />
+        <MathButton id='subtractButton' onClickFunc={this.subtractNum} label='-1' />
       </div>
     );
   }
