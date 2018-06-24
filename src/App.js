@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import MathButton from './components/MathButton.js';
 import './App.css';
 
 class App extends Component {
@@ -10,10 +11,15 @@ class App extends Component {
     };
   }
 
+  addButton = () => {
+    this.setState({ currentNumber: this.state.currentNumber + 1 });
+  }
+
   render() {
     return (
       <div className="App">
         <p>{this.state.currentNumber}</p>
+        <MathButton id='addButton' onClickFunc={this.addButton} label='+1' />
       </div>
     );
   }
