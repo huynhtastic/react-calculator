@@ -13,15 +13,15 @@ class App extends Component {
   }
 
   addNum = () => {
-    this.setState({ currentNumber: this.state.currentNumber + 1 });
+    this.setState({ currentNumber: this.state.currentNumber + this.state.inputtedNumber });
   }
 
   subtractNum = () => {
-    this.setState({ currentNumber: this.state.currentNumber - 1});
+    this.setState({ currentNumber: this.state.currentNumber - this.state.inputtedNumber });
   }
 
   onInputChange(num) {
-    this.setState({ inputtedNumber: num.target.value });
+    this.setState({ inputtedNumber: parseInt(num.target.value) });
   }
 
   render() {
